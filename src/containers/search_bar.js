@@ -6,17 +6,24 @@ export default class SearchBar extends Component {
 
         this.state = { term: ''};
 
-        this.onInputChange = this.onInputChange.bind(this);
+        this.onInputChange = this.onInputChange.bind(this);  
     }
 
     onInputChange(event){
         console.log(event.target.value);
-        this.setState({ term: event.target.value })
+        this.setState({ term: event.target.value });
+    }
+
+    onFormSubmit(event){
+        event.preventDefault();
     }
 
     render(){
         return( 
-            <form className='input-group'>
+            <form 
+                className='input-group'
+                onSubmit={this.onFormSubmit}
+            >
                 <input 
                     placeholder='Get 5 day forecst'
                     className='form-control'
@@ -24,7 +31,10 @@ export default class SearchBar extends Component {
                     onChange={this.onInputChange}
                 />
                 <span className='input-group-btn'>
-                    <button type='submit' className='btn btn-secondary'>
+                    <button 
+                        type='submit' 
+                        className='btn btn-secondary'
+                    >
                         Submit
                     </button>
                 </span>
