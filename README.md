@@ -1,3 +1,3 @@
 # React-Redux Weather App
 
-A react redux weather app, fetches data from Openweathermap Api
+A react redux weather single page application, fetches data from Openweathermap Api
